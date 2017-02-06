@@ -19,11 +19,11 @@ typedef enum {
 /* Data structure to store environment data
  * and system state together */
 typedef struct EnvironmentData {
-   signed int acc_x : 8;
-   signed int acc_y : 8;
-   signed int acc_z : 8;
+   signed int acc_x : 7;
+   signed int acc_y : 7;
+   signed int acc_z : 7;
    signed int temp : 8;
-   SystemState state;
+   SystemState state : 2;
 } EnvironmentData;
 
 
