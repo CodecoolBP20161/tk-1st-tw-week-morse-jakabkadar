@@ -14,18 +14,21 @@ void CalculateSystemState(EnvironmentData *env) {
 	y = env->acc_y;
 	z = env->acc_z;
 	temp = env->temp;
-	int ra = (x*x+y*y+z*z) / (x*x+y*y+z*z);
+	int ra = x*x+y*y+z*z;
 
-	if ((ra > 3 || x > 2 || y > 2 || z > 2) && temp > 34) {
-		env->state = HIGH_ACCELERATION_AND_TEMP;
-	}
-	else if (temp > 34) {
-		env->state = HIGH_TEMP;
-	}
-	else if (x > 2 || y > 2 || z > 2){
-		env->state = HIGH_ACCELERATION;
-	}
-	else {
-		env->state = OK;
-	}
+	if (temp > 34) {
+    	env->state = HIGH_TEMP;
+    	if (x > 2 || y > 2 || z >2 || ra > 9) {
+    		env->state = HIGH_ACCELERATION_AND_TEMP;
+    		return;
+    	}
+    }
+    else if (x > 2 || y > 2 || z >2 || ra > 9){
+    	env->state = HIGH_ACCELERATION;
+    	return;
+    }
+    else {
+    	env->state = OK;
+    	return;
+    }
 }

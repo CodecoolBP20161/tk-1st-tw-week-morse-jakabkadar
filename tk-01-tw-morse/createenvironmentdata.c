@@ -13,13 +13,13 @@
 EnvironmentData CreateEnvironmentData(float acc_x, float acc_y, float acc_z, signed int temp)
 {
 
-	signed int ac_x, ac_y, ac_z;
+	signed int ac_x, ac_y, ac_z, t;
 
 	ac_x = (int)(acc_x+0.5);
 	ac_y = (int)(acc_y+0.5);
 	ac_z = (int)(acc_z+0.5);
-
-	EnvironmentData env = {ac_x, ac_y, ac_z, temp};
+	t = temp;
+	EnvironmentData env = {ac_x, ac_y, ac_z, t};
 
 	return env;
 
