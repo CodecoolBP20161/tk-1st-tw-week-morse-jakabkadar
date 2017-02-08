@@ -15,9 +15,9 @@ EnvironmentData CreateEnvironmentData(float acc_x, float acc_y, float acc_z, sig
 
 	signed int ac_x, ac_y, ac_z, t;
 
-	ac_x = (int)(acc_x+0.5 + 10);
-	ac_y = (int)(acc_y+0.5 + 10);
-	ac_z = (int)(acc_z+0.5 + 10);
+	ac_x = (int)(acc_x*10 + 0.5);
+	ac_y = (int)(acc_y*10 + 0.5);
+	ac_z = (int)(acc_z*10 + 0.5);
 	t = temp;
 	EnvironmentData env = {ac_x, ac_y, ac_z, t};
 
