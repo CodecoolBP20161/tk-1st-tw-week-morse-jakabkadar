@@ -10,9 +10,9 @@
  */
 void CalculateSystemState(EnvironmentData *env) {
 	signed int x, y, z, temp;
-	x = env->acc_x - 10;
-	y = env->acc_y - 10;
-	z = env->acc_z - 10;
+	x = env->acc_x / 10;
+	y = env->acc_y / 10;
+	z = env->acc_z / 10;
 	temp = env->temp;
 	int ra = x*x+y*y+z*z;
 
