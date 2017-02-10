@@ -26,14 +26,13 @@ int CharToMorse(char input[], char *output) {
 		} else if (i<strlen(input)-1){
 
 				strcat(output, CHAR_TO_MORSE_ALPHA[((int)input[i])-65]);
-				strcat(output, "/");
+				if (input[i+1]!=' '){
+					strcat(output, "/");
+				}
 
 		} else if (i<strlen(input)){
 				strcat(output, CHAR_TO_MORSE_ALPHA[((int)input[i])-65]);
 
-		} else {
-				strcat(output, "\n");
-				r=input[i-1];
 		}
 	}
 

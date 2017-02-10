@@ -44,7 +44,7 @@ int MorseToBinary(char input[], char output[]) {
 	int used = (int)strlen(conv) / 8;
 	int remainder = (int)strlen(conv) % 8;
 
-	for (k=0; k< used; k++) {
+	for (k=0; k< used+1; k++) {
 		for (j=0; j<8; j++) {
 			if (conv[k*8+j] == '0') {
 				output[k] <<=1;
@@ -67,6 +67,5 @@ int MorseToBinary(char input[], char output[]) {
 			}
 		}
 	}
-	printf("%s\n", conv);
 	return strlen(conv);
 }
